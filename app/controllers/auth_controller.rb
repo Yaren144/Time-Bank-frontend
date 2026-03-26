@@ -46,7 +46,9 @@ class AuthController < ApplicationController
       render json: { error: "Invalid email or password" }, status: :unauthorized
     end
   end
-
+  def logout
+    render json: { message: "Logged out successfully" }, status: :ok
+  end
   private
 
   def generate_token(user)

@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   post "/auth/login",    to: "auth#login"
 
   get "/admin/users", to: "admin#users"
+
+  delete "/auth/logout", to: "auth#logout"
 end
