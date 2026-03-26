@@ -1,0 +1,44 @@
+.dashboard { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+.dashboard h2 { color: #1E3A5F; margin-bottom: 1.5rem; font-size: 1.4rem; }
+.profile-card {
+  background: white; border-radius: 16px; padding: 2rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  display: flex; gap: 2rem; align-items: flex-start;
+  flex-wrap: wrap; margin-bottom: 1.5rem;
+}
+.avatar {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: #2E86AB; display: flex; align-items: center;
+  justify-content: center; color: white;
+  font-size: 1.6rem; font-weight: 700; flex-shrink: 0;
+}
+.profile-info { flex: 1; }
+.profile-info h3 { font-size: 1.2rem; color: #1E3A5F; margin-bottom: 4px; }
+.profile-info p { color: #6B7280; font-size: 0.9rem; margin-bottom: 6px; }
+.badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 0.78rem; font-weight: 600; }
+.badge.user  { background: #DBEAFE; color: #1E40AF; }
+.badge.admin { background: #FEF3C7; color: #92400E; }
+.credits-box {
+  background: #1E3A5F; color: white;
+  padding: 1rem 1.5rem; border-radius: 12px; text-align: center;
+}
+.credits-num { font-size: 2rem; font-weight: 700; color: #F5A623; }
+.credits-lbl { font-size: 0.8rem; opacity: 0.8; margin-top: 2px; }
+.stat-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem; margin-bottom: 1.5rem;
+}
+.stat-card {
+  background: white; border-radius: 12px; padding: 1.2rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.stat-label { font-size: 0.78rem; color: #6B7280; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+.stat-value { font-size: 1.6rem; font-weight: 700; color: #1E3A5F; margin-top: 4px; }
+.btn-sm {
+  padding: 7px 18px; border: 1.5px solid #2E86AB;
+  color: #2E86AB; background: white; border-radius: 8px;
+  cursor: pointer; font-size: 0.85rem; font-weight: 600; transition: all 0.2s;
+}
+.btn-sm:hover { background: #2E86AB; color: white; }
+.btn-danger { border-color: #DC2626 !important; color: #DC2626 !important; }
+.btn-danger:hover { background: #DC2626 !important; color: white !important; }

@@ -1,0 +1,44 @@
+.hero {
+  background: linear-gradient(135deg, #1E3A5F 0%, #2E86AB 100%);
+  color: white;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+.hero h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 1rem; }
+.hero p { font-size: 1.1rem; opacity: 0.85; max-width: 500px; margin: 0 auto 2rem; }
+.hero-btn {
+  background: #F5A623;
+  color: #1E3A5F;
+  border: none;
+  padding: 14px 36px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.hero-btn:hover { transform: translateY(-2px); }
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  padding: 3rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  text-align: center;
+}
+.icon {
+  width: 48px; height: 48px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 1.4rem;
+}
+.card h3 { font-size: 1.05rem; margin-bottom: 0.5rem; color: #1E3A5F; }
+.card p { font-size: 0.88rem; color: #6B7280; line-height: 1.5; }

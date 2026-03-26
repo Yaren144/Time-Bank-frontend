@@ -1,0 +1,16 @@
+.admin-table-wrap {
+  background: white; border-radius: 16px;
+  padding: 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  overflow-x: auto;
+}
+.admin-table-wrap h3 { color: #1E3A5F; margin-bottom: 1rem; }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+th {
+  background: #1E3A5F; color: white;
+  padding: 10px 12px; text-align: left; font-weight: 600;
+}
+th:first-child { border-radius: 8px 0 0 0; }
+th:last-child  { border-radius: 0 8px 0 0; }
+td { padding: 10px 12px; border-bottom: 1px solid #F3F4F6; }
+tr:hover td { background: #F9FAFB; }
+tr:last-child td { border-bottom: none; }
