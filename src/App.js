@@ -7,6 +7,9 @@ import Profile from "./pages/Profile";
 import EditProfile from "./pages/EditProfile";
 import AdminPanel from "./pages/AdminPanel";
 import Payment from "./pages/Payment";
+import Services from "./pages/Services";
+import MyServices from "./pages/MyServices";
+import Transactions from "./pages/Transactions";
 
 export default function App() {
   const [page, setPage] = useState("home");
@@ -42,6 +45,9 @@ export default function App() {
       case "edit-profile": return <EditProfile token={token} navigate={navigate} />;
       case "admin":        return <AdminPanel token={token} navigate={navigate} />;
       case "payment":      return <Payment token={token} navigate={navigate} />;
+      case "services":     return <Services token={token} navigate={navigate} />;
+      case "my-services":  return <MyServices token={token} navigate={navigate} />;
+      case "transactions": return <Transactions token={token} navigate={navigate} />;
       default:             return <Home navigate={navigate} />;
     }
   };
