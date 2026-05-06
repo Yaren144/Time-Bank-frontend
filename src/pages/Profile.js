@@ -14,7 +14,7 @@ export default function Profile({ token, navigate, onLogout }) {
 
   if (!user) return <div style={{ padding: "2rem", textAlign: "center", color: "#6B7280" }}>Loading...</div>;
 
-  const initials = (user.first_name[0] + user.last_name[0]).toUpperCase();
+  const initials = ((user.first_name?.[0] || "") + (user.last_name?.[0] || "")).toUpperCase() || "?";
 
   return (
     <div className="dashboard">
