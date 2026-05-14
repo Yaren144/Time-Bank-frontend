@@ -13,6 +13,7 @@ import Transactions from "./pages/Transactions";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import PaymentCancel from "./pages/PaymentCancel";
 
+// export default specify the main component in the file
 export default function App() {
   const getInitialPage = () => {
     const path = window.location.pathname;
