@@ -1,10 +1,13 @@
 import React from "react";
 import "./Navbar.css";
+import  {
+  ShoppingBasketIcon
+} from "lucide-react";
 
 export default function Navbar({ page, token, user, navigate, onLogout }) {
   return (
     <nav className="navbar">
-      <div className="logo" onClick={() => navigate("home")}>? TIME BANK</div>
+      <div className="logo" onClick={() => navigate("home")}><ShoppingBasketIcon style={{ transform: "translateY(5px)" }} size={25} /> TIME BANK</div>
       <div className="nav-links">
         {!token ? (
           <>
