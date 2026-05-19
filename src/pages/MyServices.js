@@ -39,7 +39,7 @@ function ReviewForm({ requestId, token, onDone }) {
       <div style={{ marginBottom: 6 }}>
         {[1,2,3,4,5].map(i => (
           <span key={i} style={{ cursor: "pointer", fontSize: "1.4rem", color: i <= (hover || rating) ? "#F5A623" : "#D1D5DB" }}
-            onClick={() => setRating(i)} onMouseEnter={() => setHover(i)} onMouseLeave={() => setHover(0)}>?</span>
+            onClick={() => setRating(i)} onMouseEnter={() => setHover(i)} onMouseLeave={() => setHover(0)}>★</span>
         ))}
       </div>
       <textarea value={comment} onChange={e => setComment(e.target.value)}

@@ -36,6 +36,11 @@ export default function AdminPanel({ token }) {
     load("/admin/users", setUsers);
     showAlert("User updated", "success");
   };
+  const toggleRole = async (id) => {
+  await fetch(`${API}/admin/users/${id}/toggle-role`, { method: "PATCH", headers: h });
+  load("/admin/users", setUsers);
+  showAlert("Role updated", "success");
+  };
 
   const toggleService = async (id) => {
     await fetch(`${API}/admin/services/${id}/toggle`, { method: "PATCH", headers: h });
@@ -81,6 +86,8 @@ export default function AdminPanel({ token }) {
                   <td><strong>{u.time_credits}</strong></td>
                   <td><span style={{ color: u.active ? "#059669" : "#DC2626", fontWeight: 600 }}>{u.active ? "Active" : "Inactive"}</span></td>
                   <td><button className="btn-sm" style={{ fontSize: "0.78rem", padding: "4px 10px" }} onClick={() => toggleUser(u.id)}>{u.active ? "Deactivate" : "Activate"}</button></td>
+                  <td><button className="btn-sm" style={{ fontSize: "0.78rem", padding: "4px 10px", borderColor: "#7C3AED", color: "#7C3AED" }}onClick={() => toggleRole(u.id)}>
+                  {u.role === "admin" ? "Make User" : "Make Admin"}</button></td>
                 </tr>
               ))}
             </tbody>
