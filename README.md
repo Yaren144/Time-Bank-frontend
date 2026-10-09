@@ -1,97 +1,41 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
+# Time Bank Platform: Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A time-banking platform where users offer services to each other and pay with **time credits** instead of money. This repository holds the React frontend. The platform is split into three services:
 
-## Available Scripts
+| Repository | Role | Stack |
+|---|---|---|
+| **Time-Bank-frontend** (this repo) | Web UI | React |
+| [Time-Bank-main-backend](https://github.com/Yaren144/Time-Bank-main-backend) | Users, services, requests, reviews, credits, admin API | Ruby on Rails, MySQL |
+| [Time-Bank-payment-backend](https://github.com/Yaren144/Time-Bank-payment-backend) | Buying time credits (simulated payment service) | Ruby on Rails, MySQL |
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- Registration and login with **JWT authentication**
+- Create, browse and manage services; list your own services under *My Services*
+- Service request workflow: request → accept / reject / cancel → complete
+- Credit transfers and transaction history
+- Reviews and favorite services
+- **Role-based access control:** an admin panel to manage users, roles and services and to view transactions and balances
+- Buying time credits through the separate payment service
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Architecture
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+React frontend ──► main-backend    (REST API, :3000) ──► MySQL
+               └─► payment-backend (REST API, :3001) ──► MySQL
+```
 
-### `npm test`
+## Running Locally
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Start [Time-Bank-main-backend](https://github.com/Yaren144/Time-Bank-main-backend) on port 3000 and [Time-Bank-payment-backend](https://github.com/Yaren144/Time-Bank-payment-backend) on port 3001. Each backend reads its database password from the `DB_PASSWORD` environment variable (see `.env.example`).
+2. Start the frontend:
 
-### `npm run build`
+```bash
+npm install
+npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Notes and Next Steps
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
->>>>>>> 8bf617a5e58c628e77a26b534d98b6635abb8938
+- The payment service is a simulation built for learning: it validates the input and adds credits, but it does not connect to a real payment provider.
+- Planned: move the API URLs into environment variables, containerize all services with Docker Compose, and deploy them to AWS.
